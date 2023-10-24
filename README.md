@@ -1,16 +1,16 @@
-# 🧑‍✈️ GPT PILOT
+# 🤖✈️ GPT PILOT
 
 <a href="https://trendshift.io/repositories/466" target="_blank"><img src="https://trendshift.io/api/badge/repositories/466" alt="Pythagora-io%2Fgpt-pilot | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
 ### GPT Pilot helps developers build apps 20x faster
 
-You specify what kind of app you want to build. Then, GPT Pilot asks clarifying questions, creates the product and technical requirements, sets up the environment, and **starts coding the app step by step, like in real life, while you oversee the development process**. It asks you to review each task it finishes or to help when it gets stuck. This way, GPT Pilot acts as a coder while you are a lead dev who reviews code and helps when needed.
+You specify what kind of app you want to build. Then, GPT Pilot asks clarifying questions, creates the technical requirements, sets up the environment, and **starts coding the app step by step, like a real developer, while you oversee the development process**. It asks you to review each task it finishes or to help when it gets stuck. This way, GPT Pilot acts as a coder while you are a lead dev who reviews code and helps when needed.
 
 ---
 
 <!-- TOC -->
 * [🔌 Requirements](#-requirements)
-* [🚦How to start using gpt-pilot?](#how-to-start-using-gpt-pilot)
+* [🛫 How to start using gpt-pilot?](#how-to-start-using-gpt-pilot)
     * [🐳 How to start gpt-pilot in docker?](#-how-to-start-gpt-pilot-in-docker)
 * [🧑‍💻️ CLI arguments](#%EF%B8%8F-cli-arguments)
 * [🔎 Examples](#-examples)
@@ -54,39 +54,39 @@ https://github.com/Pythagora-io/gpt-pilot/assets/10895136/0495631b-511e-451b-93d
 
 # 🔌 Requirements
 
-- **Python 3.9-3.11** (3.12 is currently not working due to a [dependency issue](https://github.com/psycopg/psycopg2/issues/1628)
-- **PostgreSQL** (optional, projects default is SQLite)
-   - DB is needed for multiple reasons like continuing app development. If you have to stop at any point or the app crashes, go back to a specific step so that you can change some later steps in development, and easier debugging, in future we will add functionality to update project (change some things in existing project or add new features to the project and so on)...
+- **Python 3.9-3.11** (3.12 is currently not working due to a [dependency issue](https://github.com/psycopg/psycopg2/issues/1628).)
+- **PostgreSQL (Optional)** (SQLite is used by default without installation.)
+   - A database is useful for multiple reasons such as continuing app development and easier debugging. If you have to stop at any point, the app crashes, or you need to go back to a specific step so that you can change some later steps in development, a database is necessary to keep the code for later use. In the future we will also add functionality to update existing projects.
 
 
-# 🚦How to start using gpt-pilot?
+# 🛫 How to start using gpt-pilot
 After you have Python and (optionally) PostgreSQL installed, follow these steps:
-1. `git clone https://github.com/Pythagora-io/gpt-pilot.git` (clone the repo)
-2. `cd gpt-pilot`
-3. `python -m venv pilot-env` (create a virtual environment)
-4. `source pilot-env/bin/activate` (or on Windows `pilot-env\Scripts\activate`) (activate the virtual environment)
-5. `pip install -r requirements.txt` (install the dependencies)
-6. `cd pilot`
-7. `mv .env.example .env` (create the .env file)
-8. Add your environment (OpenAI/Azure), your API key, and the SQLite/PostgreSQL database info to the `.env` file
-   - to change from SQLite to PostgreSQL in your .env, just set `DATABASE_TYPE=postgres`
-9. `python db_init.py` (initialize the database)
-10. `python main.py` (start GPT Pilot)
+1. `git clone https://github.com/Pythagora-io/gpt-pilot.git` (clone the repo).
+2. `cd gpt-pilot`.
+3. `python -m venv pilot-env` (create a virtual environment).
+4. `source pilot-env/bin/activate` (or on Windows `pilot-env\Scripts\activate`) (activate the virtual environment).
+5. `pip install -r requirements.txt` (install the dependencies).
+6. `cd pilot`.
+7. `mv .env.example .env` (create the .env file).
+8. Add your environment (OpenAI/Azure), your API key, and the SQLite/PostgreSQL database info to the `.env` file. If you use a local model, please [set up LocalAI](https://localai.io/basics/getting_started/).
+   - to change from SQLite to PostgreSQL in your .env, just set `DATABASE_TYPE=postgres`.
+9. `python db_init.py` (initialize the database).
+10. `python main.py` (start GPT Pilot).
 
-After, this, you can just follow the instructions in the terminal.
+After this, you can just follow the instructions in the terminal.
 
 All generated code will be stored in the folder `workspace` inside the folder named after the app name you enter upon starting the pilot.
 
 
 ## 🐳 How to start gpt-pilot in docker?
-1. `git clone https://github.com/Pythagora-io/gpt-pilot.git` (clone the repo)
-2. Update the `docker-compose.yml` environment variables, which can be done via `docker compose config` . if you use local model, please go to [https://localai.io/basics/getting_started/](https://localai.io/basics/getting_started/) start. 
-3. By default, GPT Pilot will read & write to `~/gpt-pilot-workspace` on your machine, you can also edit this in `docker-compose.yml`
-4. run `docker compose build`. this will build a gpt-pilot container for you.
-5. run `docker compose up`.
-6. access the web terminal on `port 7681`
-7. `python db_init.py` (initialize the database)
-8. `python main.py` (start GPT Pilot)
+1. `git clone https://github.com/Pythagora-io/gpt-pilot.git` (clone the repo).
+2. Update the `docker-compose.yml` environment variables, which can be done via `docker compose config`. If you use a local model, please [set up LocalAI](https://localai.io/basics/getting_started/).
+3. By default, GPT Pilot will read & write to `~/gpt-pilot-workspace` on your machine, you can also edit this in `docker-compose.yml`/.
+4. Run `docker compose build`. This will build a gpt-pilot container for you.
+5. Run `docker compose up`.
+6. Access the web terminal on `port 7681`.
+7. `python db_init.py` (initialize the database).
+8. `python main.py` (start GPT Pilot).
 
 This will start two containers, one being a new image built by the `Dockerfile` and a Postgres database. The new image also has [ttyd](https://github.com/tsl0922/ttyd) installed so that you can easily interact with gpt-pilot. Node is also installed on the image and port 3000 is exposed.
 
@@ -96,7 +96,7 @@ This will start two containers, one being a new image built by the `Dockerfile` 
 ## `app_type` and `name`
 If not provided, the ProductOwner will ask for these values:
 
-`app_type` is used as a hint to the LLM as to what kind of architecture, language options and conventions would apply. If not provided, `prompts.prompts.ask_for_app_type()` will ask for it.
+`app_type` is used as a hint to the LLM as to what kind of architecture, language options, and conventions would be used. If not provided, `prompts.prompts.ask_for_app_type()` will ask for it.
 
 See `const.common.APP_TYPES`: 'Web App', 'Script', 'Mobile App', 'Chrome Extension'
 

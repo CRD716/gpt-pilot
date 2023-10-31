@@ -52,7 +52,7 @@ I've broken down the idea behind GPT Pilot and how it works in the following blo
 
 https://github.com/Pythagora-io/gpt-pilot/assets/10895136/0495631b-511e-451b-93d5-8a42acf22d3d
 
-# 🔌 Requirements
+# ⛽ Requirements
 
 - **Python 3.9-3.11** (3.12 is currently not working due to a [dependency issue](https://github.com/psycopg/psycopg2/issues/1628).)
 - **(Optional) PostgreSQL** (SQLite is used by default without needing installation.)
@@ -73,7 +73,7 @@ After you have Python and (optionally) PostgreSQL installed, follow these steps:
 9. `python db_init.py` (initialize the database).
 10. `python main.py` (start GPT Pilot).
 
-After this, you can just follow the instructions in the terminal.
+After this, you can just follow the instructions shown in the terminal.
 
 All generated code will be stored in the folder `workspace` inside the folder named after the app name you enter upon starting the pilot.
 

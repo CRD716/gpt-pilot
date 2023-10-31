@@ -27,7 +27,7 @@ You specify what kind of app you want to build. Then, GPT Pilot asks clarifying 
 
 ---
 
-GPT Pilot aims to research to what extent the best LLMS can be utilized to generate fully working, production-ready apps while a developer oversees the implementation.
+GPT Pilot aims to research to what extent the best LLMs can be utilized to generate fully working, production-ready apps while a developer oversees the implementation.
 
 **The main idea is that AI can write most of the code for an app (maybe 95%), but for the rest, a developer is and will be needed until we get full AGI**.
 
@@ -54,7 +54,7 @@ https://github.com/Pythagora-io/gpt-pilot/assets/10895136/0495631b-511e-451b-93d
 
 # ⛽ Requirements
 
-- **Python 3.9-3.11** (3.12 is currently not working due to a [dependency issue](https://github.com/psycopg/psycopg2/issues/1628).)
+- **Python 3.9+**
 - **(Optional) PostgreSQL** (SQLite is used by default without needing installation.)
    - A database is useful for multiple reasons such as continuing app development and easier debugging. If you have to stop at any point, the app crashes, or you need to go back to a specific step so that you can change some later steps in development, a database is necessary to keep the code for later use. In the future we will also add functionality to update existing projects.
 
@@ -125,7 +125,7 @@ python main.py user_id=me_at_work
 
 If not specified, `user_id` defaults to the OS username but can be provided explicitly if your OS username differs from your GitHub or work username. This value is used to load the `App` config when the `workspace` arg is provided.
 
-If not specified `email` will be parsed from `~/.gitconfig` if the file exists.
+If not specified, `email` will be parsed from `~/.gitconfig` if the file exists.
 
 See also [What's the purpose of arguments.password / User.password?](https://github.com/Pythagora-io/gpt-pilot/discussions/55)
 

@@ -18,7 +18,7 @@ You specify what kind of app you want to build. Then, GPT Pilot asks clarifying 
     * [Markdown editor](#-markdown-editor)
     * [Timer app](#-timer-app)
 * [🏛 Main pillars of GPT Pilot](#-main-pillars-of-gpt-pilot)
-* [🏗 How does GPT Pilot work?](#-how-gpt-pilot-works)
+* [🏗 How does GPT Pilot work?](#-how-does-gpt-pilot-work)
 * [🕴 How's GPT Pilot different from _Smol developer_ and _GPT engineer_?](#hows-gpt-pilot-different-from-smol-developer-and-gpt-engineer)
 * [🍻 Contributing](#-contributing)
 * [🔗 Connect with us](#-connect-with-us)
